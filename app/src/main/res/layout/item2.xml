@@ -7,12 +7,14 @@
     <ImageView
         android:id="@+id/iv_one"
         android:layout_width="0dp"
+        android:scaleType="fitXY"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
     <ImageView
         android:id="@+id/iv_two"
         android:layout_width="0dp"
+        android:scaleType="fitXY"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 

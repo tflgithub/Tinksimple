@@ -1,21 +1,19 @@
-{
-  "data": [
-    {
-      "type": "1",
-      "title": "呜呜",
-      "content": "喔喔喔",
-      "image_url_1": "http://img1.3lian.com/2015/w7/85/d/21.jpg"
-    },
-    {
-      "type": "1",
-      "title": "45",
-      "content": "哩哩里",
-      "image_url_1": "http://img4.duitang.com/uploads/item/201508/17/20150817142843_4smWc.jpeg"
-    },
-    {
-      "type": "2",
-      "image_url_1": "http://img4.duitang.com/uploads/item/201508/17/20150817142843_4smWc.jpeg",
-      "image_url_2": "http://img1.3lian.com/2015/w7/85/d/21.jpg"
-    }
-  ]
-}
+[
+  {
+    "type": "1",
+    "title": "Woaw store",
+    "content": "WOAW and Black Cat Club is collaborating for the first time to launch a 60s Hong Kong theme tattoo and barber pop-up, “The Classy Room”, that takes you back to 60s Hong Kong art scenes. To give a fuller 60s experience, WOAW is decorated as an old-style tea house that could be well from a set from the movie “In the Mood for Love”. ",
+    "image_url_1": "http://img1.3lian.com/2015/w7/85/d/21.jpg"
+  },
+  {
+    "type": "2",
+    "image_url_1": "http://img4.duitang.com/uploads/item/201508/17/20150817142843_4smWc.jpeg",
+    "image_url_2": "http://img1.3lian.com/2015/w7/85/d/21.jpg"
+  },
+  {
+    "type": "1",
+    "title": "Armoury",
+    "content": "THE ARMOURY是一个高级男装订制品牌，精选来自英国、日本、意大利、西班牙及世界各地的高档经典男士服装，同时提供订做服装和优质品牌的现成外衣、鞋履及领带等服务。引入顶级工艺与品质并重的男装品牌，为注重仪表的绅士们提供英国、意大利及亚洲缝制的高级西服，以及从领带到鞋履、钱包到雨伞都一应俱全的配饰系列。THE ARMOURY的经营概念源自其创始人对经典造型的热爱及对巧手制作的优质男仕服式背后隐藏的故事有浓厚的兴趣。THE ARMOURY的概念店是香港的经典男士服装聚集地。该店具有绅士俱乐部的感觉，但却整齐地摆置着不常见且只有会员才熟悉的名字：从意大利西装和衬衫制造商(Liverano &Liverano和奥拉兹奥-卢西亚诺)到来自西班牙(Carmina)和英国(Gaziano &Girling)的定制鞋，从香港最好的裁缝店(W.W. Chan &Sons)所定制的西服到那不勒斯风格的日本成衣品牌(Ring Jacket)。他们还销售一款绅士雨伞产品(英国老牌制伞品牌Fox Umbrellas)，其图案会让人想起比利时超现实主义画家雷内.马格利特风格的画作。",
+    "image_url_1": "http://img4.duitang.com/uploads/item/201508/17/20150817142843_4smWc.jpeg"
+  }
+]

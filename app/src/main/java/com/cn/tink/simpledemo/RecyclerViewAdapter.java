@@ -32,13 +32,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         mLayoutInflater = LayoutInflater.from(context);
     }
 
-
+    public void addAll(List<ServerData> list) {
+        this.datas.addAll(list);
+        notifyDataSetChanged();
+    }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //加载Item View的时候根据不同TYPE加载不同的布局
         if (viewType == ITEM_TYPE.ITEM1.ordinal()) {
             return new Item1ViewHolder(mLayoutInflater.inflate(R.layout.item1, parent, false));
-        } else {
+        } else{
             return new Item2ViewHolder(mLayoutInflater.inflate(R.layout.item2, parent, false));
         }
     }
@@ -51,7 +54,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             Picasso.with(mContext).load(datas.get(position).image_url_1).placeholder(R.mipmap.ic_launcher).into(((Item1ViewHolder) holder).iv_logo);
         } else if (holder instanceof Item2ViewHolder) {
             Picasso.with(mContext).load(datas.get(position).image_url_1).placeholder(R.mipmap.ic_launcher).into(((Item2ViewHolder) holder).iv_one);
-            Picasso.with(mContext).load(datas.get(position).image_url_2).placeholder(R.mipmap.ic_launcher).into(((Item2ViewHolder) holder).iv_one);
+            Picasso.with(mContext).load(datas.get(position).image_url_2).placeholder(R.mipmap.ic_launcher).into(((Item2ViewHolder) holder).iv_two);
         }
     }
 

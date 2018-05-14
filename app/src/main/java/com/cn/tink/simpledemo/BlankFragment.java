@@ -4,15 +4,18 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BlankFragment extends Fragment {
+    private RecyclerViewAdapter recyclerViewAdapter;
 
     public BlankFragment() {
     }
@@ -34,11 +37,27 @@ public class BlankFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        final SwipeRefreshLayout mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshLayout);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         List<ServerData> list = getArguments().getParcelableArrayList("data");
-        recyclerView.setAdapter(new RecyclerViewAdapter(getActivity(), list));
+        recyclerViewAdapter = new RecyclerViewAdapter(getActivity(), list);
+        recyclerView.addItemDecoration(new SpaceItemDecoration(DensityUtils.dp2px(getActivity(), 10)));
+        recyclerView.setAdapter(recyclerViewAdapter);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadMore();
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        });
+    }
+
+
+    public void loadMore() {
+        List<ServerData> list = Utils.getServerData("data.json", getActivity().getApplication());
+        recyclerViewAdapter.addAll(list);
     }
 }

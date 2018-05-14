@@ -5,9 +5,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,10 +25,7 @@ public class MainActivity extends AppCompatActivity {
         this.pager = (ViewPager) findViewById(R.id.pager);
         this.tab = (TabLayout) findViewById(R.id.tab);
         //get data
-        String json = Utils.getServerData("data.json", getApplicationContext());
-        Gson gson = new Gson();
-        list = gson.fromJson(json, new TypeToken<List<ServerData>>() {
-        }.getType());
+        list = Utils.getServerData("data.json", getApplicationContext());
         pager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), titles, list));
         /*Tab与ViewPager绑定*/
         tab.setupWithViewPager(pager);
